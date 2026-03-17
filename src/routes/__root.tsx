@@ -17,10 +17,14 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title: 'Hopper Emoji Speech',
       },
     ],
     links: [
+      {
+        rel: 'icon',
+        href: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦫</text></svg>',
+      },
       {
         rel: 'stylesheet',
         href: appCss,
@@ -32,9 +36,18 @@ export const Route = createRootRoute({
     return (
       <div className="flex flex-col items-center justify-center p-8 text-center h-dvh">
         <p className="text-6xl mb-4">🤷‍♂️</p>
-        <p className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-100">Page not found</p>
-        <p className="text-gray-500 text-sm">We couldn't find the page you were looking for.</p>
-        <a href="/" className="mt-6 px-4 py-2 bg-blue-500 text-white rounded-xl font-medium text-sm transition-transform active:scale-95">Go home</a>
+        <p className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-100">
+          Page not found
+        </p>
+        <p className="text-gray-500 text-sm">
+          We couldn't find the page you were looking for.
+        </p>
+        <a
+          href="/"
+          className="mt-6 px-4 py-2 bg-blue-500 text-white rounded-xl font-medium text-sm transition-transform active:scale-95"
+        >
+          Go home
+        </a>
       </div>
     )
   },

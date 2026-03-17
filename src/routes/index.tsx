@@ -32,28 +32,34 @@ function App() {
 
       const utterance = new SpeechSynthesisUtterance(text)
       utterance.lang = 'th-TH'
-      
-      const thaiVoices = voices.filter(v => v.lang.startsWith('th'))
 
-      const bestVoice = thaiVoices.find(v => v.name.includes('Siri') || v.name.includes('Premium') || v.name.includes('Enhanced')) || thaiVoices[0]
+      const thaiVoices = voices.filter((v) => v.lang.startsWith('th'))
+
+      const bestVoice =
+        thaiVoices.find(
+          (v) =>
+            v.name.includes('Siri') ||
+            v.name.includes('Premium') ||
+            v.name.includes('Enhanced'),
+        ) || thaiVoices[0]
       if (bestVoice) {
         utterance.voice = bestVoice
       }
 
-      utterance.rate = 0.95 // Slightly slower for more natural, clear cadence 
+      utterance.rate = 0.95 // Slightly slower for more natural, clear cadence
       utterance.pitch = 1.05 // Slight natural inflection
-      
+
       globalThis.speechSynthesis.speak(utterance) // Speak the word
     }
   }
 
   const handleEmojiClick = (item: EmojiItem) => {
     // Add to history
-    setHistory(prev => [
+    setHistory((prev) => [
       ...prev,
-      { id: Date.now(), emoji: item.emoji, word: item.word }
+      { id: Date.now(), emoji: item.emoji, word: item.word },
     ])
-    
+
     // Speak the word
     speak(item.word)
   }
@@ -66,7 +72,9 @@ function App() {
   return (
     <main className="flex flex-col h-dvh w-full max-w-md mx-auto bg-gray-50 dark:bg-zinc-950 shadow-xl border-x border-gray-100 dark:border-zinc-900">
       <div className="bg-white dark:bg-zinc-900 border-b border-gray-200 dark:border-zinc-800 p-4 text-center sticky top-0 z-10">
-        <h1 className="text-lg font-bold text-gray-800 dark:text-gray-100">Hopper chat!</h1>
+        <h1 className="text-lg font-bold text-gray-800 dark:text-gray-100">
+          Hopper Emoji Speech
+        </h1>
       </div>
 
       <ChatArea history={history} bottomRef={bottomRef} />
