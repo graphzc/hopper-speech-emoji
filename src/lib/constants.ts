@@ -5,6 +5,7 @@ export const EMOJIS = [
   { emoji: '🥔', word: 'หัวมัน' },
   { emoji: '🦎', word: 'กิ้งก่า' },
   { emoji: '🐻', word: 'หมี' },
+  { emoji: '🪵', word: 'ท่อนไม้' },
 
   // Animals
   { emoji: '🐶', word: 'หมา' },
